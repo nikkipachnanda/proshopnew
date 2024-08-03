@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import { Container } from 'react-bootstrap';
 import Footer from './components/Footer';
+import HomeScreen from './screens/HomeScreen';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <main>
         <Container>
         <h1>Welcome to Proshop </h1>
+        <Outlet/>
         </Container>
       </main>
       <Footer></Footer>
