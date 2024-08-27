@@ -7,21 +7,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-
+import { Provider } from 'react-redux';
+import store from './store';
+import CartScreens from './screens/CartScreens';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreens';
+import ShippingScreen from './screens/ShippingScreen';
+import PrivateRoute from './components/PrivateRoute';
+import PaymentScreen from './screens/PaymentScreen';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<HomeScreen />} />
       <Route path='/product/:id' element={<ProductScreen />} />
+      <Route path='/cart' element={<CartScreens />} />
+      <Route path='/login' element={<LoginScreen />} />
+      <Route path='/register' element={<RegisterScreen />} />
+
+
+      <Route path='' element={<PrivateRoute/>}>
+         <Route path='/shipping' element={ <ShippingScreen/>} />
+         <Route path='/payment' element={ <PaymentScreen/>} />
+      </Route>
+
     </Route>
+
+  
   )
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <RouterProvider router={router}> </RouterProvider>
+      <Provider store={store}>
+        <RouterProvider router={router}> </RouterProvider>
+     </Provider>
   </React.StrictMode>
 );
 
