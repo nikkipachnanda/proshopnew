@@ -64,15 +64,18 @@ const ShippingScreen = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId="postalCode" class="my-2">
-            <Form.Label>Country</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter Poster"
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+     
+
+          <Form.Group className='my-2' controlId='country'>
+          <Form.Label>Country</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Enter country'
+            value={country}
+            required
+            onChange={(e) => setCountry(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
 
           <Button type="submit" variant="primary" className="my-2">
             Sign In
