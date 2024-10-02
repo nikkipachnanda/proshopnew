@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useLoginMutation, useLogoutMutation } from '../slices/userApiSlice';
 import {logout} from "../slices/authSlice";
 import { useNavigate } from 'react-router-dom';
-import SearchBox from './SearchBox';
+import SearchBox from './SearchBox';  
 
 
 
